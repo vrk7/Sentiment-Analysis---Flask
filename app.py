@@ -82,3 +82,5 @@ def update_false():
     # Render hello.html template
     return render_template('hello.html')
 
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=5000)
