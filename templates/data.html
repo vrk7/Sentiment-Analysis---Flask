@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <title>My Webpage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="/">Home</a>
+        <a class="navbar-brand" href="/data">Database</a>
+    </nav>
+
+    <div class="container-fluid mt-5">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Review</th>
+                    <th>Sentiment</th>
+                    <th>Prediction Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        <td>{{row["review"]}}</td>
+                        <td>{{row["sentiment"]}}</td>
+                        <td>{{row["status"]}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <a href="/" class="btn btn-primary mt-3">Back</a>
+
+</body>
+</html>
